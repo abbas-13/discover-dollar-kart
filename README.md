@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# E-commerce Website Homepage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# DollarKart
 
-## Available Scripts
+This project serves as an assignment submission for a potential internship opportunity. The assignment was to create an e-commerce website homepage, demonstrating proficiency in front-end development skills.
 
-In the project directory, you can run:
+## Features
+### Navbar: 
+Includes a navigation bar with a category menu that expands on hover for easy navigation.
 
-### `npm start`
+### Submenu: 
+Provides a submenu that also expands on hover, allowing users to quickly access specific sections.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Carousel: 
+Implemented a carousel to showcase featured products or promotions, enhancing visual appeal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Footer: 
+Included a footer section to provide additional information and navigation links.
 
-### `npm test`
+## Technologies Used
+### React: 
+Used to build the user interface components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Tailwind CSS: 
+Utilized for styling and responsive design, ensuring compatibility across various devices.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### API Integration: 
+Incorporated a free API for fetching product data, enabling dynamic content generation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Work in Progress
+Please note that this project is a work in progress. While it currently demonstrates the implemented features, further enhancements and refinements may be added in future iterations.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage
+###To run the project locally:
 
-### `npm run eject`
+Clone the repository to your local machine.
+Install dependencies using npm install.
+Start the development server using npm start.
+Access the application in your browser at http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Credits
+API: The project utilizes a free API for fetching product data. Credits to the API provider for making this resource available.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+License
+This project is licensed under the MIT License.
