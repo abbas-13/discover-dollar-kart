@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+}
+
+i {
+  transition: transform 0.5s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-item > a {
+  color: #fff; /* Keep main menu link text color white */
+}
+
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
+  color: #000;
+}
+
+.navbar-item,
+.dropdown,
+.sub-dropdown {
+  padding: 1rem 0;
+  color: #fff; /* Keep main menu text color white */
+}
+
+.navbar-links,
+.navbar-actions {
+  display: flex;
+  gap: 2rem;
+}
+
+.dropdown,
+.sub-dropdown-link {
+  position: relative;
+}
+
+.dropdown:hover .dropdown-chevron,
+.sub-dropdown:hover .sub-dropdown-chevron {
+  transform: rotate(-180deg);
+}
+
+.sub-dropdown-link:hover i {
+  transform: rotate(-90deg);
+}
+
+.dropdown-menu,
+.sub-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  left: 0; /* Adjusted for better alignment */
+  background-color: #fff; /* Change background color to white */
+  width: 165%; /* Adjusted width for better alignment */
+}
+
+.dropdown-item,
+.sub-dropdown-item {
+  padding: 0.75rem;
+  color: #000; /* Change dropdown menu items' text color to black */
+}
+
+.dropdown-item > a,
+.sub-dropdown-item > a {
+  color: #000; /* Ensure dropdown menu items' text color is black */
+}
+
+.dropdown:hover .dropdown-menu,
+.sub-dropdown:hover .sub-dropdown-menu {
+  display: flex;
+}
+
+.sub-dropdown-menu {
+  top: 0; /* Aligns the sub-menu with its parent item */
+  left: 100%; /* Ensure it appears to the right of the parent */
+}
+
+.dropdown-item:hover > .sub-dropdown-menu {
+  top: 0; /* Aligns the sub-menu with its parent item */
+}
+
+.dropdown-item:nth-child(3):hover .sub-dropdown-menu {
+  display: flex;
+}
+
+.dropdown-menu:hover i {
+  transform: rotate(-90deg);
+}
