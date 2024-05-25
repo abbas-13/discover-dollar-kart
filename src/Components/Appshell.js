@@ -1,10 +1,11 @@
 import { Footer } from "./Footer";
 import { Navbar } from "./Navbar";
+import "./Appshell.css";
 
 export const AppShell = ({ children }) => (
-  <div className="flex flex-col h-full">
+  <div className="container">
     <Navbar />
     {children}
-    <Footer className=" inline-block align-baseline" />
+    <Footer className="footer" />
   </div>
 );

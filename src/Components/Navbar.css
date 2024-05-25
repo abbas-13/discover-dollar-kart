@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.navbar-item > a {
+  color: #fff;
+}
+
+.navbar-item {
+  padding: 1rem 0;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.dropdown-chevron {
+  transform: rotate(-180deg);
+}
+.navbar-item:hover .subnav-content {
+  display: block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+  z-index: 2;
+}
+
+.navbar-item:hover .dropdown-menu {
+  display: block;
+}
+
+.sub-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: #fff;
+  box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+  z-index: 3;
+}
+
+.sub-dropdown:hover .sub-dropdown-menu {
+  display: block;
+}
+
+.dropdown-item,
+.sub-dropdown-item {
+  padding: 14px;
+  transition: all linear 0.3s;
+}
+
+.dropdown-item:hover,
+.sub-dropdown-item:hover {
+  background: gray;
+  cursor: pointer;
+  color: #fff;
+}
+
+.dropdown-item > a,
+.sub-dropdown-item > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-item:hover > a,
+.sub-dropdown-item:hover > a {
+  color: #fff;
+}

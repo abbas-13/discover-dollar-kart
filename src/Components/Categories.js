@@ -1,121 +1,59 @@
-import styles from "./Categories.css";
+import "./Categories.css";
 
 export const Categories = () => {
+  const categories = [
+    {
+      name: "Electronics",
+      subMenu: ["Smartphones", "Tablets", "Laptops", "TV"],
+    },
+    {
+      name: "Women's Fashion",
+      subMenu: ["Dresses", "T-shirts", "Shoes", "Bags", "Jewellery"],
+    },
+    {
+      name: "Men's Fashion",
+      subMenu: ["Jeans", "T-shirts", "Shoes", "Formal Wear", "Accessories"],
+    },
+    {
+      name: "Home Appliances",
+      subMenu: [
+        "Microwaves & Ovens",
+        "Refrigerators",
+        "Air Conditioning",
+        "Lighting & Decor",
+      ],
+    },
+    {
+      name: "Health & Beauty",
+      subMenu: [],
+    },
+    {
+      name: "Sports & Fitness",
+      subMenu: [],
+    },
+  ];
+
   return (
-    <nav className="navbar">
-      <ul className="navbar-links">
-        <li className="navbar-item">
-          <a href="#">Home</a>
-        </li>
-        <li className="navbar-item dropdown">
-          <a href="#" className="dropdown-link">
-            Categories
-            <i className="fa-solid fa-chevron-down dropdown-chevron"></i>
+    <ul className="dropdown-menu">
+      {categories.map((category, index) => (
+        <li key={index} className="dropdown-item sub-dropdown">
+          <a href="#" className="sub-dropdown-link">
+            {category.name}
+            {category.subMenu.length > 0 && (
+              <i className="fa-solid fa-chevron-down"></i>
+            )}
           </a>
-          <ul className="dropdown-menu">
-            <li className="dropdown-item sub-dropdown">
-              <a href="#" className="sub-dropdown-link ">
-                Electronics
-                <i className="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul className="sub-dropdown-menu">
-                <li className="sub-dropdown-item">
-                  <a href="#">Smartphones</a>
+          {category.subMenu.length > 0 && (
+            <ul className="sub-dropdown-menu">
+              {category.subMenu.map((subItem, subIndex) => (
+                <li key={subIndex} className="sub-dropdown-item">
+                  <a href="#">{subItem}</a>
                 </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Tablets</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Laptops</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">TV</a>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown-item sub-dropdown">
-              <a href="#" className="sub-dropdown-link ">
-                Women's Fashion
-                <i className="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul className="sub-dropdown-menu">
-                <li className="sub-dropdown-item">
-                  <a href="#">Dresses</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">T-shirts</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Shoes</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Bags</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Accessories</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Jewellery</a>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown-item sub-dropdown">
-              <a href="#" className="sub-dropdown-link">
-                Men's Fashion
-                <i className="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul className="sub-dropdown-menu">
-                <li className="sub-dropdown-item">
-                  <a href="#">Jeans</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">T-shirts</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Shoes</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Formals</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Accessories</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Innerwear</a>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown-item sub-dropdown">
-              <a href="#" className="sub-dropdown-link">
-                Home Appliances
-                <i className="fa-solid fa-chevron-down"></i>
-              </a>
-              <ul className="sub-dropdown-menu">
-                <li className="sub-dropdown-item">
-                  <a href="#">Microwave/Ovens</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Refrigerator</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Air Conditioners</a>
-                </li>
-                <li className="sub-dropdown-item">
-                  <a href="#">Lighting and Decor</a>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown-item">
-              <a href="#">Health and Beauty</a>
-            </li>
-          </ul>
+              ))}
+            </ul>
+          )}
         </li>
-        <li className="navbar-item">
-          <a href="#" className="navbar-link">
-            Groceries
-          </a>
-        </li>
-      </ul>
-    </nav>
+      ))}
+    </ul>
   );
 };

@@ -1,47 +1,50 @@
-import React from "react";
+import AspectRatio from "@mui/joy/AspectRatio";
+import Button from "@mui/joy/Button";
+import Card from "@mui/joy/Card";
+import CardContent from "@mui/joy/CardContent";
+import IconButton from "@mui/joy/IconButton";
+import Typography from "@mui/joy/Typography";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-const ProductCard = ({ product }) => {
-  const productStyles = {
-    position: "relative",
-    height: "100%",
-    display: "flex",
-    borderRadius: "10px",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: "16px",
-    boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
-  };
-
-  const imageStyles = {
-    width: "auto",
-    height: "100%",
-    margin: "auto",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-  };
-
+export const ProductItem = ({ product }) => {
   return (
-    <div style={productStyles}>
-      <div style={imageStyles}>
-        <img src={product.image} alt={product.name} className="object-cover" />
-      </div>
-      <div className="p-4">
-        <h3 className="text-gray-900 font-semibold mb-2">{product.name}</h3>
-        <p className="text-gray-600 mb-2">{product.description}</p>
-        <p className="text-gray-700 font-semibold">${product.price}</p>
-      </div>
-    </div>
-  );
-};
-
-export const ProductGrid = ({ products }) => {
-  return (
-    <div className="container mx-auto py-8">
-      <div className="flex flex-wrap -mx-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
+    <Card>
+      <IconButton
+        aria-label="bookmark Bahamas Islands"
+        size="sm"
+        sx={{
+          position: "absolute",
+          top: "0.875rem",
+          right: "0.5rem",
+          zIndex: "1",
+        }}
+      >
+        <FavoriteBorderIcon color="error" />
+      </IconButton>
+      <AspectRatio>
+        <img src={product.image} loading="lazy" alt="" />
+      </AspectRatio>
+      <Typography level="title-lg">{product.title}</Typography>
+      <CardContent
+        sx={{ display: "grid", gridTemplateColumns: "1fr" }}
+        orientation="horizontal"
+      >
+        <div>
+          <Typography level="body-xs">Price:</Typography>
+          <Typography fontSize="lg" fontWeight="lg">
+            {product.price}
+          </Typography>
+        </div>
+        <Button
+          variant="solid"
+          size="md"
+          color="primary"
+          aria-label="Explore Bahamas Islands"
+          sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+        >
+          Explore
+        </Button>
+      </CardContent>
+    </Card>
   );
 };

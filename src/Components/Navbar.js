@@ -14,14 +14,18 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import { Categories } from "./Categories";
 import { Searchbar } from "./Searchbar";
+import "./Navbar.css";
 
-const pages = ["Categories", "Blog"];
+const pages = [
+  { label: "Home", component: null },
+  { label: "Categories", component: <Categories /> },
+  { label: "Groceries", component: null },
+];
 const settings = ["Wishlist", "Profile", "Account", "Dashboard", "Logout"];
 
 export const Navbar = () => {
+  const [dropdownVisible, setDropdownVisible] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -29,6 +33,14 @@ export const Navbar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const handleMouseEnter = (index) => {
+    setDropdownVisible(index);
+  };
+
+  const handleMouseLeave = () => {
+    setDropdownVisible(null);
   };
 
   return (
@@ -55,7 +67,20 @@ export const Navbar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Categories />
+            <ul className="navbar-links">
+              {pages.map((page, index) => (
+                <li
+                  key={index}
+                  className="navbar-item"
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <a href="#">{page.label}</a>
+                  {dropdownVisible === index && page.component}{" "}
+                  <i className="fa-solid fa-chevron-down dropdown-chevron"></i>
+                </li>
+              ))}
+            </ul>
           </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>

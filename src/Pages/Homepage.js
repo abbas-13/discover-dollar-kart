@@ -1,35 +1,36 @@
 import { useContext } from "react";
+
 import { Carousel } from "../Components/Carousel";
-import { ProductGrid } from "../Components/ProductItem";
+import { ProductItem } from "../Components/ProductItem";
 import { Context } from "../Context";
+
+import "./Homepage.css";
 
 export const Homepage = () => {
   const { products } = useContext(Context);
-  const images = products?.map((product) => product.image);
-
-  const containerStyles = {
-    width: "500px",
-    height: "280px",
-    margin: "0 auto",
-  };
-
-  const productGridStyle = {
-    width: "250px",
-    height: "250px",
-    margin: "0 auto",
-  };
+  const images = products?.map((product, index) => product.image);
 
   const randomImages = getRandomImages(images, 5);
 
   return (
-    <div>
-      <div style={containerStyles}>
+    <>
+      <div className="first-container">
         <Carousel images={randomImages} />
       </div>
-      <div style={productGridStyle}>
-        <ProductGrid products={products} />
+      <div style={{ padding: "2rem", marginTop: "2rem" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr 1fr",
+            gap: "1rem",
+          }}
+        >
+          {products.map((item) => (
+            <ProductItem product={item} />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 const getRandomImages = (imagesArray, count) => {
