@@ -1,19 +1,26 @@
-import logo from "./logo.svg";
+import { AppShell } from "./Components/Appshell";
+import { Homepage } from "./Pages/Homepage";
+import { Context } from "./Context";
+import { useEffect, useState } from "react";
 
-function App() {
+export const App = () => {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    const response = await fetch("https://fakestoreapi.com/products");
+    const products = await response.json();
+    setProducts(products);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
-    <div>
-      <header>
-        <img src={logo} alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Context.Provider value={{ products }}>
+      <AppShell>
+        <Homepage />
+      </AppShell>
+    </Context.Provider>
   );
-}
-
-export default App;
+};
